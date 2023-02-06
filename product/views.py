@@ -1,3 +1,15 @@
-from django.shortcuts import render
+from django.http import Http404
 
-# Create your views here.
+from rest-framework import APIView
+
+class CategoryDetail(APIView):
+    def get_object(self, category_slug):
+        try:
+            return Category.objects.get(slug=category_slug)
+        except Category.DoesNotExist:
+            raise Http404
+
+    def get(self, request, category_slug, format = None):
+        category = self.get_object(category_slug)
+        serializer = CategorySerializer(category)
+        return Response(serializer.data)
