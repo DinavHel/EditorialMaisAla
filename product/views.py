@@ -1,6 +1,6 @@
 from django.http import Http404
 
-from rest-framework import APIView
+from rest_framework import APIView
 
 class ProductDetail(APIView):
     def get_object(self, category_slug, product_slug):
