@@ -15,6 +15,7 @@ class ProductSerializer(serializers.ModelSerializer):
             "get_thumbnail"
         )
 
+
 class CategorySerializer(serializers.ModelSerializer):
     products = ProductSerializer(many=True)
 
