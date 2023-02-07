@@ -23,7 +23,6 @@ class MyOrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
         fields = (
-            "id",
             "first_name",
             "last_name",
             "email",
@@ -31,7 +30,6 @@ class MyOrderSerializer(serializers.ModelSerializer):
             "zipcode",
             "place",
             "phone",
-            "stripe_token",
             "items",
             "paid_amount"
         )
@@ -61,7 +59,6 @@ class OrderSerializer(serializers.ModelSerializer):
             "zipcode",
             "place",
             "phone",
-            "stripe_token",
             "items",
         )
 
